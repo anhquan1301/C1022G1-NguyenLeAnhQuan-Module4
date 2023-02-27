@@ -15,8 +15,8 @@
 <h2>Calculator</h2>
 <form action="/calculator" method="get">
 <div>
-    <input type="text" value="${firstOperand}" name="firstOperand" required>
-    <input type="text" value="${secondOperand}" name="secondOperand" required>
+    <input type="text" value="${firstOperand}" name="firstOperand" required placeholder="Number One">
+    <input type="text" value="${secondOperand}" name="secondOperand" required placeholder="Number Two">
 </div>
 <input type="submit" name="operand" value="Addition(+)">
 <input type="submit" name="operand" value="Subtraction(-)">
