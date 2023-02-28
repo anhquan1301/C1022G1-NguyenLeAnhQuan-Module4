@@ -20,8 +20,8 @@ public class SettingController {
         model.addAttribute("settingList",iSettingService.findAll());
         return "/list";
     }
-    @GetMapping("/edit-form/{id}")
-   public String editForm(Model model, @PathVariable int id){
+    @GetMapping("/edit-form")
+   public String editForm(Model model, @RequestParam Integer id){
         Setting setting = iSettingService.findById(id);
         if(setting!=null) {
             model.addAttribute("setting", setting);
@@ -47,6 +47,11 @@ public class SettingController {
     public String create(@ModelAttribute Setting setting, RedirectAttributes redirectAttributes){
         iSettingService.save(setting);
         redirectAttributes.addFlashAttribute("msg","Successful new creation");
+        return "redirect:/setting";
+    }
+    @GetMapping("/delete")
+    public String delete(@RequestParam(required = false) Integer id){
+        iSettingService.delete(id);
         return "redirect:/setting";
     }
 }

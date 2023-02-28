@@ -43,4 +43,13 @@ public class SettingRepository implements ISettingRepository {
         setting.setId(settingList.size()+1);
         settingList.add(setting);
     }
+
+    @Override
+    public void delete(int id) {
+        for (int i = 0; i <settingList.size() ; i++) {
+            if(settingList.get(i).getId()==id){
+                settingList.remove(settingList.get(i));
+            }
+        }
+    }
 }

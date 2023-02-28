@@ -9,4 +9,5 @@ public interface ISettingService {
     Setting findById(int id);
     void edit(Setting setting);
     void save(Setting setting);
+    void delete(int id);
 }

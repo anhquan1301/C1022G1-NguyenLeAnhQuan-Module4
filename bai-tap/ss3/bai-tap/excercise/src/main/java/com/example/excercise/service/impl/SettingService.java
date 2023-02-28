@@ -31,4 +31,9 @@ public class SettingService implements ISettingService {
     public void save(Setting setting) {
         iSettingRepository.save(setting);
     }
+
+    @Override
+    public void delete(int id) {
+        iSettingRepository.delete(id);
+    }
 }
