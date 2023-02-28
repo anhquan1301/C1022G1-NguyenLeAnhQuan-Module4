@@ -9,10 +9,10 @@
 <html>
 <head>
     <title>Calculator</title>
-    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 </head>
 <body>
-<h2>Calculator</h2>
+<h2 class="">Calculator</h2>
 <form action="/calculator" method="get">
 <div>
     <input type="text" value="${firstOperand}" name="firstOperand" required placeholder="Number One">
