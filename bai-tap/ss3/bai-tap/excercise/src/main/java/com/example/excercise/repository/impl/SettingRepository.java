@@ -37,4 +37,10 @@ public class SettingRepository implements ISettingRepository {
             }
         }
     }
+
+    @Override
+    public void save(Setting setting) {
+        setting.setId(settingList.size()+1);
+        settingList.add(setting);
+    }
 }

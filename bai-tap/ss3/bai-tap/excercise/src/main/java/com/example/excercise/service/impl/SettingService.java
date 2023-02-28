@@ -26,4 +26,9 @@ public class SettingService implements ISettingService {
     public void edit(Setting setting) {
         iSettingRepository.edit(setting);
     }
+
+    @Override
+    public void save(Setting setting) {
+        iSettingRepository.save(setting);
+    }
 }

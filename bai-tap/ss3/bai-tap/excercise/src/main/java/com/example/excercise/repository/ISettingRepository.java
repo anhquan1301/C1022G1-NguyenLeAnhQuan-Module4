@@ -8,4 +8,5 @@ public interface ISettingRepository {
     List<Setting> findAll();
     Setting findById(int id);
     void edit(Setting setting);
+    void save(Setting setting);
 }

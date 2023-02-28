@@ -16,7 +16,9 @@
 </head>
 <body>
 <h2 class="text-center">Box Emails</h2>
-<table class="table">
+<p style="color: brown;text-align: center">${msg}</p>
+<a class="btn btn-dark" href="/setting/create-form">Add new mails</a>
+<table class="table table-striped">
   <thead>
   <tr>
     <th>ID</th>
