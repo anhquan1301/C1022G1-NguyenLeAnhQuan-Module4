@@ -21,12 +21,20 @@ public class SettingRepository implements ISettingRepository {
 
     @Override
     public Setting findById(int id) {
-        
+        for (int i = 0; i < settingList.size(); i++) {
+            if(settingList.get(i).getId()==id){
+                return settingList.get(i);
+            }
+        }
         return null;
     }
 
     @Override
     public void edit(Setting setting) {
-
+        for (int i = 0; i < settingList.size(); i++) {
+            if (settingList.get(i).getId()==setting.getId()){
+                settingList.set(i,setting);
+            }
+        }
     }
 }

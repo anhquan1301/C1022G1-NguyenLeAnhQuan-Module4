@@ -13,26 +13,27 @@
 </head>
 <body>
 <h2>Edit Settings</h2>
-<form:form>
+<form:form modelAttribute="setting" action="/setting/edit" method="post">
     <div>
         <form:hidden path="id"/>
     </div>
     <div>
-        <label for="">Languages: </label>
-        <form:select path="" items=""/>
+        <label>Languages: </label>
+        <form:select path="languages" items="${listLanguages}"/>
     </div>
     <div>
-        <label for="">Page Size: </label>
-        <span>Show</span><form:select path=""/> <span>email per page</span>
+        <label>Page Size: </label>
+        <span>Show</span><form:select path="pageSize" items="listPageSize"/> <span>email per page</span>
     </div>
     <div>
-        <label for="">Spams filter:</label>
-        <form:radiobutton path=""/> <span>Enable spams filter</span>
+        <label>Spams filter:</label>
+        <form:radiobutton path="spamsFilter"/> <span>Enable spams filter</span>
     </div>
     <div>
-        <label for="">Signature</label>
-        <form:textarea path=""/>
+        <label>Signature</label>
+        <form:textarea path="signature"/>
     </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form:form>
 </body>
 </html>

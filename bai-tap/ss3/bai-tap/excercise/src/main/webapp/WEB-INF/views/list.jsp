@@ -33,7 +33,7 @@
     <td>${setting.pageSize}</td>
     <td>${setting.spamsFilter}</td>
     <td>${setting.signature}</td>
-    <td><a href="">Edit</a></td>
+    <td><a href="/setting/edit-form">Edit</a></td>
   </tr>
   </c:forEach>
   </tbody>

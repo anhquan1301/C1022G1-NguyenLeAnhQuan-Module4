@@ -19,11 +19,11 @@ public class SettingService implements ISettingService {
 
     @Override
     public Setting findById(int id) {
-        return null;
+        return iSettingRepository.findById(id);
     }
 
     @Override
     public void edit(Setting setting) {
-
+        iSettingRepository.edit(setting);
     }
 }
