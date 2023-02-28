@@ -10,29 +10,33 @@
 <html>
 <head>
     <title>Edit setting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </head>
 <body>
 <h2>Edit Settings</h2>
-<form:form modelAttribute="setting" action="/setting/edit" method="post">
+<form:form modelAttribute="setting" action="/setting/update" method="post">
+<table>
     <div>
         <form:hidden path="id"/>
     </div>
-    <div>
-        <label>Languages: </label>
-        <form:select path="languages" items="${listLanguages}"/>
-    </div>
-    <div>
-        <label>Page Size: </label>
-        <span>Show</span><form:select path="pageSize" items="listPageSize"/> <span>email per page</span>
-    </div>
-    <div>
-        <label>Spams filter:</label>
-        <form:radiobutton path="spamsFilter"/> <span>Enable spams filter</span>
-    </div>
-    <div>
-        <label>Signature</label>
-        <form:textarea path="signature"/>
-    </div>
+    <tr>
+        <th><label>Languages: </label></th>
+        <td><form:select path="languages" items="${listLanguages}"/></td>
+    </tr>
+    <tr>
+        <th><label>Page Size: </label></th>
+        <td><span>Show</span><form:select path="pageSize" items="${listPageSize}"/> <span>email per page</span></td>
+    </tr>
+    <tr>
+        <th><label>Spams filter: </label></th>
+        <td><form:checkbox path="spamsFilter"/> <span>Enable spams filter</span></td>
+    </tr>
+    <tr>
+        <th><label>Signature: </label></th>
+        <td><form:textarea path="signature"/></td>
+    </tr>
+</table>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form:form>
 </body>

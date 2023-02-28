@@ -20,14 +20,14 @@ public class SettingController {
         model.addAttribute("settingList",iSettingService.findAll());
         return "/list";
     }
-    @GetMapping("/edit-form")
-   public String editForm(Model model, @RequestParam Integer id){
+    @GetMapping("/edit-form/{id}")
+   public String editForm(Model model, @PathVariable int id){
         model.addAttribute("setting",iSettingService.findById(id));
         model.addAttribute("listLanguages", Arrays.asList("Vietnamese","English","Japanese","Chinese"));
         model.addAttribute("listPageSize",Arrays.asList("5","10","15","25","50","100"));
         return "/edit";
     }
-    @PostMapping("/edit")
+    @PostMapping("/update")
     public String edit(@ModelAttribute Setting setting, RedirectAttributes redirectAttributes){
         iSettingService.edit(setting);
         redirectAttributes.addFlashAttribute("msg","Successful upgrade");
