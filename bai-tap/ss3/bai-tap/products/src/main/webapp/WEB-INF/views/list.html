@@ -9,14 +9,20 @@
 <body>
 <h2 class="text-center">Danh sách sản phẩm</h2>
 <p class="text-center" style="color: brown; font-weight: bold" th:text="${msg}"></p>
-<a class="btn btn-dark" href="/product/create-form">Add new Products</a>
-<form action="/product/" >
-  <div class="form-group">
-    <input type="text"
-           class="form-control" name="name" aria-describedby="helpId" placeholder="Nhập tên sản phẩm...">
+<div class="row">
+  <div class="col-6"><a class="btn btn-dark" href="/product/create-form">Thêm sản phẩm mới</a></div>
+  <div class="col-6">
+    <form action="/product/" >
+    <div class="form-group float-start w-75">
+      <input type="text"
+             class="form-control" name="name" aria-describedby="helpId" th:value="${name}" placeholder="Nhập tên sản phẩm...">
+    </div>
+    <div class="float-start w-25" >
+      <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    </div>
+  </form>
   </div>
-  <button type="submit" class="btn btn-primary">Tìm kiếm</button>
-</form>
+</div>
 <table class="table table-striped">
   <thead>
   <tr>

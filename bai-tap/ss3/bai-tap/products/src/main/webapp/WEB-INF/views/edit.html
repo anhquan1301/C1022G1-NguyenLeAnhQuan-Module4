@@ -9,28 +9,30 @@
 <body>
 <h2>Chỉnh sửa sản phẩm</h2>
 <form action="/product/edit" method="post" th:object="${product}">
-  <input type="hidden" th:field="*{id}">
-  <div class="form-group">
-    <label for="name">Tên sản phẩm</label>
-    <input type="text"
-           class="form-control" th:field="*{name}" id="name" aria-describedby="helpId">
-  </div>
-  <div class="form-group">
-    <label for="price">Giá sản phẩm</label>
-    <input type="text"
-           class="form-control" th:field="*{price}" id="price" aria-describedby="helpId">
-  </div>
-  <div class="form-group">
-    <label for="status">Mô tả sản phẩm</label>
-    <input type="text"
-           class="form-control" th:field="*{status}" id="status" aria-describedby="helpId">
-  </div>
-  <div class="form-group">
-    <label for="producer">Nhà sản xuất</label>
-    <input type="text"
-           class="form-control" th:field="*{producer}" id="producer" aria-describedby="helpId">
-  </div>
-  <button type="submit" class="btn btn-primary">Update</button>
+  <table border="1px" class="table w-50">
+    <input type="hidden" th:field="*{id}">
+    <tr>
+      <th><label for="name">Tên sản phẩm</label></th>
+      <td><input type="text"
+                 class="form-control" th:field="*{name}" id="name" aria-describedby="helpId"></td>
+    </tr>
+    <tr>
+      <th><label for="price">Giá sản phẩm</label></th>
+      <td><input type="text"
+                 class="form-control" th:field="*{price}" id="price" aria-describedby="helpId"></td>
+    </tr>
+    <tr>
+      <th><label for="status">Mô tả sản phẩm</label></th>
+      <td><input type="text"
+                 class="form-control" th:field="*{status}" id="status" aria-describedby="helpId"></td>
+    </tr>
+    <tr>
+      <th><label for="producer">Nhà sản xuất</label></th>
+      <td><input type="text"
+                 class="form-control" th:field="*{producer}" id="producer" aria-describedby="helpId"></td>
+    </tr>
+  </table>
+  <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
 </form>
 </body>
 </html>

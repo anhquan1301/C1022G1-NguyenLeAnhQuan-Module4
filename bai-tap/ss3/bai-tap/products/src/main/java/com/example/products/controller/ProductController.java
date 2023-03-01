@@ -16,6 +16,7 @@ public class ProductController {
     IProductService iProductService;
     @GetMapping("")
     public String searchList(@RequestParam(required = false) String name, Model model){
+        model.addAttribute("name",name);
         model.addAttribute("listProduct",iProductService.findALl(name));
         return "/list";
     }
