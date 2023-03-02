@@ -1,7 +1,7 @@
-package com.example.products.controller;
+package com.example.controller;
 
-import com.example.products.model.Product;
-import com.example.products.service.IProductService;
+import com.example.model.Product;
+import com.example.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,7 @@ public class ProductController {
     @GetMapping("")
     public String searchList(@RequestParam(required = false) String name, Model model){
         model.addAttribute("name",name);
-        model.addAttribute("listProduct",iProductService.findALl(name));
+        model.addAttribute("listProduct",iProductService.findAll(name));
         return "/list";
     }
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm sản phẩm mới</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+<h2>Thêm sản phẩm mới</h2>
+
+<form action="/product/create" method="post" th:object="${product}">
+  <table border="1px" class="table w-50 ">
+    <tr>
+      <th><label for="name">Tên sản phẩm</label></th>
+      <td><input type="text"
+                 class="form-control" th:field="*{name}" id="name" aria-describedby="helpId" placeholder="Nhập tên sản phẩm"></td>
+    </tr>
+    <tr>
+      <th><label for="price">Giá sản phẩm</label></th>
+      <td><input type="text"
+                 class="form-control" th:field="*{price}" id="price" aria-describedby="helpId" placeholder="Nhập giá sản phẩm"></td>
+    </tr>
+    <tr>
+      <th><label for="status">Mô tả sản phẩm</label></th>
+      <td><input type="text"
+                 class="form-control" th:field="*{status}" id="status" aria-describedby="helpId" placeholder="Nhập mô tả sản phẩm"></td>
+    </tr>
+    <tr>
+      <th><label for="producer">Nhà sản xuất</label></th>
+      <td><input type="text"
+                 class="form-control" th:field="*{producer}" id="producer" aria-describedby="helpId" placeholder="Nhập nhà sản xuất"></td>
+    </tr>
+  </table>
+  <button type="submit" class="btn btn-primary">Thêm mới sản phẩm</button>
+</form>
+</body>
+</html>

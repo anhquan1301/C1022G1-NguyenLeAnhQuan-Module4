@@ -1,9 +1,11 @@
-package com.example.products.model;
+package com.example.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,17 +13,9 @@ public class Product {
     private String name;
     private String price;
     private String status;
-    private String producer;
+    private String produce;
 
     public Product() {
-    }
-
-    public Product(Integer id, String name, String price, String status, String producer) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.status = status;
-        this.producer = producer;
     }
 
     public Integer getId() {
@@ -56,11 +50,11 @@ public class Product {
         this.status = status;
     }
 
-    public String getProducer() {
-        return producer;
+    public String getProduce() {
+        return produce;
     }
 
-    public void setProducer(String producer) {
-        this.producer = producer;
+    public void setProduce(String produce) {
+        this.produce = produce;
     }
 }
