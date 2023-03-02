@@ -1,13 +1,10 @@
 package com.example.products.repository.impl;
-
 import com.example.products.model.Product;
 import com.example.products.repository.IProductRepository;
 import com.example.products.repository.SessionUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
-
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -82,7 +79,6 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    @Transactional
     public void delete(int id) {
         Session session = null;
         Transaction transaction = null;

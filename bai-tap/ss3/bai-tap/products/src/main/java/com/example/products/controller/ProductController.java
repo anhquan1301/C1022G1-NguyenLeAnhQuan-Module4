@@ -12,7 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/product")
 public class ProductController {
     @Autowired
-    IProductService iProductService;
+   private IProductService iProductService;
     @GetMapping("")
     public String searchList(@RequestParam(required = false) String name, Model model){
         model.addAttribute("name",name);
