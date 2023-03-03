@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<h2>Welcome Blog</h2>
+<div>
+    <a href="/blog/create-form">Add new Blogs</a>
+</div>
+<form action="">
+<div>
+    <input name="tittle" type="text" placeholder="Tìm kiếm..." th:value="${tittle}">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+<table class="table">
+    <thead>
+
+    <tr>
+        <th>ID</th>
+        <th>Tittle</th>
+        <th>Content</th>
+        <th>Blog Type</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="blog : ${blogList}">
+        <td scope="row" th:text="${blog.id}"></td>
+        <td th:text="${blog.tittle}"></td>
+        <td th:text="${blog.content}"></td>
+        <td th:text="${blog.blogType.getNameBlogType()}"></td>
+        <td>
+            <a th:href="@{/blog/edit-form?id=__${blog.id}__}">Edit</a>
+        </td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
