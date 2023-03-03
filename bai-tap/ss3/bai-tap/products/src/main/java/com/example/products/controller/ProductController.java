@@ -38,6 +38,7 @@ public class ProductController {
             model.addAttribute("product", product);
         }else {
             redirectAttributes.addFlashAttribute("msg","Id không tồn tại");
+            return "redirect:/product";
         }
         return "/edit";
     }

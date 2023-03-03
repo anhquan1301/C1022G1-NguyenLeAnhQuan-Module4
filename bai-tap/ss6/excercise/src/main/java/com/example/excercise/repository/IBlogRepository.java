@@ -9,6 +9,6 @@ import java.util.List;
 public interface IBlogRepository extends JpaRepository<Blog,Integer>{
 List<Blog>findByTittleContaining(String tittle);
 
-
+Blog findById(int id);
 
 }

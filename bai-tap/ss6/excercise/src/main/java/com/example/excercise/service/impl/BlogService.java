@@ -23,7 +23,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public Blog findById(int id) {
-        return iBlogRepository.findById(id).get();
+        return iBlogRepository.findById(id);
     }
 
     @Override

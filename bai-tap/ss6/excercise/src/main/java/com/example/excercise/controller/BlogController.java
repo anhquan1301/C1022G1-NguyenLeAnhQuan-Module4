@@ -36,11 +36,12 @@ public class BlogController {
     }
     @GetMapping("/edit-form")
     public String editForm(Model model, @RequestParam(required = false) Integer id, RedirectAttributes redirectAttributes){
-        if(iBlogService.findById(id)==null){
-            redirectAttributes.addFlashAttribute("msg","ID does not exist");
-        }else {
+        if(iBlogService.findById(id)!=null){
             model.addAttribute("blogTypeList",iBlogTypeService.findAll());
             model.addAttribute("blog", iBlogService.findById(id));
+        }else {
+            redirectAttributes.addFlashAttribute("msg","ID does not exist");
+            return "redirect:/blog";
         }
         return "/edit";
     }
@@ -52,11 +53,11 @@ public class BlogController {
     }
     @GetMapping("delete")
     public String delete(@RequestParam(required = false) Integer id, RedirectAttributes redirectAttributes){
-        if(iBlogService.findById(id)==null){
-            redirectAttributes.addFlashAttribute("msg","ID does not exist");
-        }else {
+        if(iBlogService.findById(id)!=null){
             redirectAttributes.addFlashAttribute("msg","Successful delete");
             iBlogService.delete(id);
+        }else {
+            redirectAttributes.addFlashAttribute("msg","ID does not exist");
         }
         return "redirect:/blog";
     }
