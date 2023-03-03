@@ -23,7 +23,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public Blog findById(int id) {
-        return iBlogRepository.findById(id);
+        return iBlogRepository.findById(id).get();
     }
 
     @Override
@@ -33,15 +33,14 @@ public class BlogService implements IBlogService {
 
     @Override
     public void edit(Blog blog) {
-        for (int i = 0; i <iBlogRepository.findAll().size() ; i++) {
-            if()
-        }
+        Blog b = findById(blog.getId());
+        b.setTittle(blog.getTittle());
+        b.setContent(blog.getContent());
+        b.setBlogType(blog.getBlogType());
+        iBlogRepository.save(b);
     }
-
     @Override
     public void delete(int id) {
-
+        iBlogRepository.delete(findById(id));
     }
-
-
 }

@@ -43,4 +43,5 @@ public class Blog {
     public void setBlogType(BlogType blogType) {
         this.blogType = blogType;
     }
+
 }
