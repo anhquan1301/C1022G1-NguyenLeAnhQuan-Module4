@@ -33,11 +33,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public void edit(Blog blog) {
-        Blog b = findById(blog.getId());
-        b.setTittle(blog.getTittle());
-        b.setContent(blog.getContent());
-        b.setBlogType(blog.getBlogType());
-        iBlogRepository.save(b);
+        iBlogRepository.save(blog);
     }
     @Override
     public void delete(int id) {
