@@ -5,5 +5,7 @@ import com.example.excercise.model.BlogType;
 import java.util.List;
 
 public interface IBlogTypeService {
-    List<BlogType> findAll();
+
+    List<BlogType> findByName(String name);
+    void save(BlogType blogType);
 }

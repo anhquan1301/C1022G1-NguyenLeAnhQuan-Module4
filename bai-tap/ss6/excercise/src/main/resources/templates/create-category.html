@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Category</title>
+</head>
+<body>
+<h2>Create Category</h2>
+<form action="/blog/create-category" method="post" th:object="${category}">
+    <div class="form-group">
+        <label for="content">Name Category</label>
+        <input type="text"
+               class="form-control" th:field="*{nameBlogType}" id="content">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
