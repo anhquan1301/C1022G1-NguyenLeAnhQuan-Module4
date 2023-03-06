@@ -85,7 +85,6 @@ public class BlogController {
     @GetMapping("/category")
     public String category(@RequestParam(required = false) String name, Model model, BlogType blogType){
         model.addAttribute("name",name);
-        model.addAttribute("listBlog", blogType.getBlogSet().toArray());
         model.addAttribute("category",iBlogTypeService.findByName(name));
         return "/category";
     }
