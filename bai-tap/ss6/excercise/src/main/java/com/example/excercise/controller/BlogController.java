@@ -83,7 +83,7 @@ public class BlogController {
         return "redirect:/blog";
     }
     @GetMapping("/category")
-    public String category(@RequestParam(required = false) String name, Model model, BlogType blogType){
+    public String category(@RequestParam(required = false) String name, Model model){
         model.addAttribute("name",name);
         model.addAttribute("category",iBlogTypeService.findByName(name));
         return "/category";

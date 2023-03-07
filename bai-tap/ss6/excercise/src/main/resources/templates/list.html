@@ -62,7 +62,7 @@
        th:href="@{/blog(page=${blogList.number - 1},tittle=${tittle})}">
         Previous
     </a>
-    <a class="page-item" th:each="p : ${countPages}" th:if="${p != blogList.number}"
+    <a class="page-item" th:each="p : ${countPages}"
        th:href="@{/blog(page=${p},tittle=${tittle})}" th:text="${p + 1}"></a>
     <a class="page-item" th:if="${blogList.hasNext()}"
        th:href="@{/blog(page=${blogList.number + 1},tittle=${tittle})}">

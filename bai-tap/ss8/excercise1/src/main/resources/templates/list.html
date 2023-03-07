@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List User</title>
+</head>
+<body>
+<h2>List User</h2>
+<div>
+    <a class="btn btn-dark" href="/user/create-form">Add new users</a>
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Stt</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Phone number</th>
+        <th>Age</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user,iterstat : ${userList}">
+        <td scope="row" th:text="${iterstat.count}"></td>
+        <td th:text="${user.getFirstName()}"></td>
+        <td th:text="${user.getLastName()}"></td>
+        <td th:text="${user.getPhoneNumber()}"></td>
+        <td th:text="${user.getAge()}"></td>
+        <td th:text="${user.getEmail()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
