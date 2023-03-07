@@ -10,19 +10,19 @@
     <div class="form-group">
         <label >Tên bài hát</label>
         <input type="text" class="form-control" th:field="*{name}" placeholder="">
-        <div th:if="${#fields.hasErrors('name')}" th:text="*{name}"></div>
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
     </div>
     <div class="form-group">
         <label >Ca sĩ</label>
         <input type="text"
                class="form-control" th:field="*{singer}" aria-describedby="helpId" placeholder="">
-        <div th:if="${#fields.hasErrors('singer')}" th:text="*{singer}"></div>
+        <div th:if="${#fields.hasErrors('singer')}" th:errors="*{singer}"></div>
     </div>
     <div class="form-group">
         <label >Thể loại</label>
         <input type="text"
                class="form-control" th:field="*{type}" aria-describedby="helpId" placeholder="">
-        <div th:if="${#fields.hasErrors('type')}" th:text="*{type}"></div>
+        <div th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></div>
     </div>
     <div>
         <input type="submit" class="btn btn-dark" value="save">
