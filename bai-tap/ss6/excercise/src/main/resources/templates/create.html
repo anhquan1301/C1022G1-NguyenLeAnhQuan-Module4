@@ -20,7 +20,9 @@
     <div>
         <label for="content">Blogs type</label>
         <select th:field="*{blogType}">
-            <option th:each="blogType : ${blogTypeList}" th:text="${blogType.nameBlogType}" th:value="${blogType.id}"></option>
+            <option th:each="blogType : ${blogTypeList}"
+                    th:text="${blogType.nameBlogType}"
+                    th:value="${blogType.id}"
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

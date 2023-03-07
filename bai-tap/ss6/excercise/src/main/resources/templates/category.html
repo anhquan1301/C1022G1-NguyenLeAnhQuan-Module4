@@ -33,8 +33,10 @@
     <tr th:each="c,iterstat : ${category}">
         <td scope="row" th:text="${iterstat.count}"></td>
         <td th:text="${c.nameBlogType}"></td>
-        <td th:each="blog : ${c.getBlogSet()}">
-            <div th:text="${blog.tittle}"></div>
+        <td>
+            <div th:each="blog : ${c.getBlogSet()}">
+            <span th:text="${blog.tittle}"></span>
+            </div>
         </td>
     </tr>
     </tbody>
@@ -67,7 +69,6 @@
     function deleteId(id,tittle) {
         document.getElementById("deleteId").value= id;
         document.getElementById("deleteTittle").innerText = tittle;
-
     }
 </script>
 </body>
