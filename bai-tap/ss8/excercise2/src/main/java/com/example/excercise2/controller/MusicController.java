@@ -9,10 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/music")
 @Controller
@@ -37,6 +34,21 @@ public class MusicController {
         Music music = new Music();
         BeanUtils.copyProperties(musicDTO,music);
         iMusicService.create(music);
+        return "redirect:/music";
+    }
+    @GetMapping("edit-form")
+    public String editForm(@RequestParam(required = false) Integer id,Model model){
+        model.addAttribute("musicDTO",iMusicService.findById(id));
+        return "/edit";
+    }
+    @PostMapping("edit")
+    public String edit(@Validated @ModelAttribute MusicDTO musicDTO, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "/edit";
+        }
+        Music music = new Music();
+        BeanUtils.copyProperties(musicDTO,music);
+        iMusicService.edit(music);
         return "redirect:/music";
     }
 }

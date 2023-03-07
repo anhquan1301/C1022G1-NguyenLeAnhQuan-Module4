@@ -1,5 +1,6 @@
 package com.example.excercise2.service.impl;
 
+import com.example.excercise2.dto.MusicDTO;
 import com.example.excercise2.model.Music;
 import com.example.excercise2.repository.IMusicRepository;
 import com.example.excercise2.service.IMusicService;
@@ -19,6 +20,16 @@ public class MusicService implements IMusicService {
 
     @Override
     public void create(Music music) {
+        iMusicRepository.save(music);
+    }
+
+    @Override
+    public Music findById(int id) {
+        return iMusicRepository.findById(id);
+    }
+
+    @Override
+    public void edit(Music music) {
         iMusicRepository.save(music);
     }
 }

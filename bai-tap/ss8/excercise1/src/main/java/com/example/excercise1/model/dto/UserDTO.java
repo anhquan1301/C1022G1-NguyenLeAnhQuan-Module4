@@ -24,14 +24,6 @@ public class UserDTO implements Validator {
     @NotBlank(message = "can't be empty")
     @Email(message = "Incorrect syntax")
    private String email;
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return false;
-    }
-
-    @Override
-    public void validate(Object target, Errors errors) {
-    }
 
     public UserDTO() {
     }
@@ -83,4 +75,13 @@ public class UserDTO implements Validator {
     public void setEmail(String email) {
         this.email = email;
     }
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+    }
+
 }
