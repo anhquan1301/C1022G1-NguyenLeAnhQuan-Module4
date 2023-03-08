@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Sửa bài hát</h2>
-<form action="/music/edit" method="post" th:object="${musicDTO}">
+<form action="/music/edit" method="post" th:object="${musicEditDTO}">
   <div >
     <input type="hidden" th:field="*{id}">
   </div>

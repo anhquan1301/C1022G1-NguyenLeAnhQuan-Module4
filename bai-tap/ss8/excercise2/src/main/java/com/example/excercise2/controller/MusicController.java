@@ -1,6 +1,7 @@
 package com.example.excercise2.controller;
 
 import com.example.excercise2.dto.MusicDTO;
+import com.example.excercise2.dto.MusicEditDTO;
 import com.example.excercise2.model.Music;
 import com.example.excercise2.service.IMusicService;
 import org.springframework.beans.BeanUtils;
@@ -38,16 +39,16 @@ public class MusicController {
     }
     @GetMapping("edit-form")
     public String editForm(@RequestParam(required = false) Integer id,Model model){
-        model.addAttribute("musicDTO",iMusicService.findById(id));
+        model.addAttribute("musicEditDTO",iMusicService.findById(id));
         return "/edit";
     }
     @PostMapping("edit")
-    public String edit(@Validated @ModelAttribute MusicDTO musicDTO, BindingResult bindingResult){
+    public String edit(@Validated @ModelAttribute("musicEditDTO") MusicEditDTO musicEditDTO, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "/edit";
         }
         Music music = new Music();
-        BeanUtils.copyProperties(musicDTO,music);
+        BeanUtils.copyProperties(musicEditDTO,music);
         iMusicService.edit(music);
         return "redirect:/music";
     }

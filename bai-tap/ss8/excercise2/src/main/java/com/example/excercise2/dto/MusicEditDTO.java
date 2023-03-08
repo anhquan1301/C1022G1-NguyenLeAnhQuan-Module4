@@ -7,7 +7,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-public class MusicDTO implements Validator {
+public class MusicEditDTO implements Validator {
+    private int id;
     @NotBlank(message = "Không được để trống")
     @Size(max = 800,message = "Không nhập quá 800 ký tự")
     @Pattern(regexp = "^([\\p{L}\\s])+$",message = "Không nhập kí tự đặc biệt")
@@ -20,7 +21,16 @@ public class MusicDTO implements Validator {
     @Size(max = 1000,message = "Không nhập quá 1000 ký tự")
     @Pattern(regexp = "^([\\p{L}\\s])+$",message = "Không nhập kí tự đặc biệt")
     private String type;
-    public MusicDTO() {
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public MusicEditDTO() {
     }
 
     public String getName() {
