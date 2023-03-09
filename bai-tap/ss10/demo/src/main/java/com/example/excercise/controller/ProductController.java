@@ -52,8 +52,9 @@ public class ProductController {
         }
     }
     @GetMapping("/detail")
-    public String detail(@RequestParam(required = false) Integer id, Model model){
-        model.addAttribute("product",iProductService.findById(id));
-        return "/detail";
+    public ModelAndView detail(@RequestParam(required = false) Integer id){
+        ModelAndView modelAndView = new ModelAndView("/detail");
+        modelAndView.addObject("product",iProductService.findByIdProDuct(id));
+        return modelAndView;
     }
 }

@@ -12,7 +12,7 @@ public class Book {
     private String content;
     private Integer quantity;
     @OneToMany(mappedBy = "book")
-    List<CodeBook> codeBookList;
+    private List<CodeBook> codeBookList;
 
     public List<CodeBook> getCodeBookList() {
         return codeBookList;

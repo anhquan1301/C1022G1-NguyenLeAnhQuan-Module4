@@ -17,13 +17,10 @@ public class CodeBookService implements ICodeBookService {
     public CodeBook findByCodeBook(int codeBook) {
         return iCodeBookRepository.findByCodeBook(codeBook);
     }
-
-//    @Transactional
+    @Transactional
     @Override
     public void remove(int code) {
-        CodeBook codeBook = this.findByCodeBook(code);
-        iCodeBookRepository.delete(codeBook);
-//        iCodeBookRepository.deleteByCodeBook(code);
+        iCodeBookRepository.deleteByCodeBook(code);
     }
 
 

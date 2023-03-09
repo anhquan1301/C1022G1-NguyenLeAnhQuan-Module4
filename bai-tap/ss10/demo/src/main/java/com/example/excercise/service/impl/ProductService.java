@@ -18,6 +18,11 @@ public class ProductService implements IProductService {
 
     @Override
     public Optional<Product> findById(int id) {
+        return Optional.ofNullable(iProductRepository.findById(id));
+    }
+
+    @Override
+    public Product findByIdProDuct(int id) {
         return iProductRepository.findById(id);
     }
 }
