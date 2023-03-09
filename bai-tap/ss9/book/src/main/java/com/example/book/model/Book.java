@@ -1,9 +1,7 @@
 package com.example.book.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -13,7 +11,16 @@ public class Book {
     private String name;
     private String content;
     private Integer quantity;
-    private Integer code;
+    @OneToMany(mappedBy = "book")
+    List<CodeBook> codeBookList;
+
+    public List<CodeBook> getCodeBookList() {
+        return codeBookList;
+    }
+
+    public void setCodeBookList(List<CodeBook> codeBookList) {
+        this.codeBookList = codeBookList;
+    }
 
     public Book() {
     }
@@ -50,11 +57,4 @@ public class Book {
         this.quantity = quantity;
     }
 
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
 }

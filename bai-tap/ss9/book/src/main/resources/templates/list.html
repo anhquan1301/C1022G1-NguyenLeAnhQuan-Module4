@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách truyện</title>
+</head>
+<body>
+<h2>Danh sách truyện</h2>
+<form action="/book/return">
+<div class="form-group">
+    <input type="text" class="form-control" name="code" id=""placeholder="Nhập mã mượn sách">
+</div>
+<div>
+    <button type="submit" class="btn btn-primary">Trả sách</button>
+</div>
+</form>
+<table class="table">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Nội dung</th>
+        <th>Số lượng</th>
+        <th>Mã mượn sách</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book,stt:${bookList}">
+        <td scope="row" th:text="${stt.count}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.content}"></td>
+        <td th:text="${book.quantity}"></td>
+        <td><a th:href="@{/book/borrow(id=${book.id})}">Mượn sách</a></td>
+        <td>
+            <div th:each="code: ${book.getCodeBookList()}">
+                <span th:text="${code.codeBook}"></span>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
