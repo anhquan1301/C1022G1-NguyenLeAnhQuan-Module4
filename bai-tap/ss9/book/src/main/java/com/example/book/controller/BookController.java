@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BookController {
     @Autowired
    private IBookService iBookService;
+    @Autowired
     private ICodeBookService iCodeBookService;
     @GetMapping("")
     public String showList(Model model){

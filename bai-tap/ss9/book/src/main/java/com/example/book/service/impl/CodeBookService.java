@@ -7,6 +7,8 @@ import com.example.book.service.ICodeBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class CodeBookService implements ICodeBookService {
 @Autowired
@@ -16,9 +18,12 @@ public class CodeBookService implements ICodeBookService {
         return iCodeBookRepository.findByCodeBook(codeBook);
     }
 
+//    @Transactional
     @Override
     public void remove(int code) {
-        iCodeBookRepository.deleteByCodeBook(code);
+        CodeBook codeBook = this.findByCodeBook(code);
+        iCodeBookRepository.delete(codeBook);
+//        iCodeBookRepository.deleteByCodeBook(code);
     }
 
 

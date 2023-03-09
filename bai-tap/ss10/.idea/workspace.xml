@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6dd1608-792d-40e8-b1f2-43d15fb57276" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ss9/book/src/main/java/com/example/book/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/book/src/main/java/com/example/book/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/book/src/main/java/com/example/book/repository/ICodeBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/book/src/main/java/com/example/book/repository/ICodeBookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9/book/src/main/java/com/example/book/service/impl/CodeBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9/book/src/main/java/com/example/book/service/impl/CodeBookService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2MlqcBGT3DYdfltpF9YinBpxG62" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/module-4/bai-tap/ss10",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6dd1608-792d-40e8-b1f2-43d15fb57276" name="Changes" comment="" />
+      <created>1678352593442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678352593442</updated>
+      <workItem from="1678352594596" duration="82000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

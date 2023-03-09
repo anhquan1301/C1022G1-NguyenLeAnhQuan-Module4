@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ICodeBookRepository extends JpaRepository<CodeBook,Integer> {
     CodeBook findByCodeBook(int codeBook);
-    void deleteByCodeBook(int code);
+
+    void deleteByCodeBook(Integer codeBook);
 }
