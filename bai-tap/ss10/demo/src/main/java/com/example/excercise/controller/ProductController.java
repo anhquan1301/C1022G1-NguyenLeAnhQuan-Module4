@@ -46,7 +46,7 @@ public class ProductController {
         Optional<Product> productOptional = iProductService.findById(id);
         if(!productOptional.isPresent()){
             return "/error.404";
-        }else {
+        } else {
             cart.decreaseProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }
