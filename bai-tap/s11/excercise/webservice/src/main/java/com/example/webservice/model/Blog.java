@@ -1,6 +1,6 @@
 package com.example.webservice.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 import javax.persistence.*;
 
@@ -11,6 +11,8 @@ public class Blog {
     private Integer id;
     private String tittle;
     private String content;
+    private String img;
+
     @ManyToOne
     @JoinColumn(name = "category_id",referencedColumnName = "id")
     private Category category;
@@ -49,4 +51,12 @@ public class Blog {
     public void setCategory(Category category) {
         this.category = category;
     }
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
 }

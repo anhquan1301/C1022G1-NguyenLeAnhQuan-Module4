@@ -7,6 +7,7 @@ public class BlogDTO {
     private Integer id;
     private String tittle;
     private String content;
+    private String img;
     @JsonBackReference
     private CategoryDTO categoryDTO;
 
@@ -52,5 +53,11 @@ public class BlogDTO {
         this.content = content;
     }
 
+    public String getImg() {
+        return img;
+    }
 
+    public void setImg(String img) {
+        this.img = img;
+    }
 }
